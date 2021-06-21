@@ -1,4 +1,4 @@
-import { isDate, isObject, encode } from './util'
+import { isDate, isPlainObject, encode } from './util'
 
 export function buildUrl(url: string, params?: any): string {
   if (!params) {
@@ -26,7 +26,7 @@ export function buildUrl(url: string, params?: any): string {
     vals.forEach(val => {
       if (isDate(val)) {
         val = val.toISOString()
-      } else if (isObject(val)) {
+      } else if (isPlainObject(val)) {
         val = JSON.stringify(val)
       }
       pars.push(`${encode(key)}=${encode(val)}`)

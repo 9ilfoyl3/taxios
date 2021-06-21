@@ -19,4 +19,5 @@ export interface TaxiosRequestConfig {
   method?: Method
   params?: any
   data?: any
+  headers?: any
 }
